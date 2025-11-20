@@ -1,9 +1,7 @@
 # CCCS-300-765 #
 
-#######################################################################
-
 Programming Techniques I – CCCS 300 765 - Online Shopping Management
-#######################################################################
+################################################
 
 The document outlines the requirements and guidelines for a final project in an Object-Oriented Programming course at McGill University, focusing on the design and implementation of a modular Java application based on real-world scenarios.
 
