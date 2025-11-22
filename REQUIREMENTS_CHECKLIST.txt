@@ -1,0 +1,413 @@
+╔════════════════════════════════════════════════════════════════╗
+║        REQUIREMENTS CHECKLIST WITH CODE LOCATIONS             ║
+║          Online Store Management System                         ║
+║              ALL 8 REQUIREMENTS MET ✅                          ║
+╚════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════
+✅ REQUIREMENT 1: Arrays or ArrayLists
+═══════════════════════════════════════════════════════════════
+
+LOCATION 1: Product.java (line ~15)
+├─ private List<ProductReview> reviews;
+├─ Stores product reviews in ArrayList
+└─ Usage: addReview(), getReviews(), getAverageRating()
+
+LOCATION 2: ShoppingCart.java (line ~15)
+├─ private List<Product> products;
+├─ Stores shopping cart items
+└─ Usage: addProduct(), removeProduct(), getProducts()
+
+LOCATION 3: OrderHistory.java (line ~13)
+├─ private List<Order> orders;
+├─ Stores customer order history
+└─ Usage: addOrder(), getOrders(), displayOrderHistory()
+
+LOCATION 4: Order.java (line ~18)
+├─ private List<Product> products;
+├─ Stores products in a specific order
+└─ Usage: Constructor creates ArrayList copy
+
+LOCATION 5: Main.java (line ~43)
+├─ private static List<Product> catalog;
+├─ Stores entire product catalog
+└─ Usage: Throughout main program
+
+DEMONSTRATION:
+→ Run program and add items to cart
+→ Option 1: See catalog ArrayList
+→ Option 3: See cart ArrayList
+→ Option 7: See order history ArrayList
+
+═══════════════════════════════════════════════════════════════
+✅ REQUIREMENT 2: Custom Exception Class
+═══════════════════════════════════════════════════════════════
+
+EXCEPTION 1: InvalidPaymentException.java
+├─ Location: com/onlinestore/exceptions/
+├─ Extends: Exception
+├─ Purpose: Thrown when payment processing fails
+├─ Fields: paymentType, reason
+└─ Used in: Payment.processPayment() methods
+
+EXCEPTION 2: EmptyCartException.java
+├─ Location: com/onlinestore/exceptions/
+├─ Extends: Exception
+├─ Purpose: Thrown when checkout attempted with empty cart
+└─ Used in: ShoppingCart.checkout(), Main.checkout()
+
+EXCEPTION 3: ProductNotFoundException.java
+├─ Location: com/onlinestore/exceptions/
+├─ Extends: Exception
+├─ Purpose: Thrown when product search fails
+├─ Fields: productId
+└─ Can be used in: Search operations
+
+USAGE EXAMPLE IN CODE:
+Main.java checkout() method:
+├─ Line ~251: cart.checkout() → throws EmptyCartException
+├─ Line ~268: payment.processPayment() → throws InvalidPaymentException
+└─ Proper try-catch in handleMenuChoice()
+
+DEMONSTRATION:
+→ Option 6: Try checkout with empty cart
+→ See EmptyCartException message
+→ Option 6: Enter invalid payment
+→ See InvalidPaymentException message
+
+═══════════════════════════════════════════════════════════════
+✅ REQUIREMENT 3: At Least One Recursive Method
+═══════════════════════════════════════════════════════════════
+
+FILE: RecursiveUtils.java
+Location: com/onlinestore/utils/
+
+METHOD 1: factorial(int n) - Line ~18
+├─ Base case: n <= 1 returns 1
+├─ Recursive case: n * factorial(n-1)
+└─ Classic recursive factorial
+
+METHOD 2: calculateTotalRecursive() - Line ~26
+├─ Base case: index >= size returns 0.0
+├─ Recursive case: current price + recursive call
+└─ Calculates cart total recursively
+
+METHOD 3: countProductsRecursive() - Line ~35
+├─ Base case: index >= size returns 0
+├─ Recursive case: 1 + recursive call
+└─ Counts products recursively
+
+METHOD 4: findMaxPriceRecursive() - Line ~44
+├─ Base case: index >= size returns maxSoFar
+├─ Recursive case: compares and recurses
+└─ Finds maximum price recursively
+
+METHOD 5: sumToN(int n) - Line ~54
+├─ Base case: n <= 0 returns 0
+├─ Recursive case: n + sumToN(n-1)
+└─ Sum of 1 to N
+
+METHOD 6: fibonacci(int n) - Line ~63
+├─ Base case: n <= 1 returns n
+├─ Recursive case: fib(n-1) + fib(n-2)
+└─ Fibonacci sequence
+
+METHOD 7: power(double base, int exponent) - Line ~72
+├─ Base case: exponent == 0 returns 1
+├─ Recursive cases: positive/negative exponents
+└─ Power calculation
+
+BONUS: recursiveBinarySearchHelper() in SearchAlgorithms.java
+├─ Line ~52
+├─ Recursive binary search implementation
+└─ Demonstrates divide-and-conquer recursion
+
+DEMONSTRATION:
+→ Option 11: Recursive Demos
+→ Try each of the 7 methods
+→ Example: Factorial(5) = 120
+
+═══════════════════════════════════════════════════════════════
+✅ REQUIREMENT 4: A Searching Algorithm
+═══════════════════════════════════════════════════════════════
+
+FILE: SearchAlgorithms.java
+Location: com/onlinestore/utils/
+
+ALGORITHM 1: linearSearch() - Line ~18
+├─ Type: Linear/Sequential Search
+├─ Complexity: O(n)
+├─ Compares each element sequentially
+└─ Returns product or null
+
+ALGORITHM 2: binarySearch() - Line ~32
+├─ Type: Binary Search (iterative)
+├─ Complexity: O(log n)
+├─ Requires sorted list
+├─ Uses divide-and-conquer approach
+└─ Returns product or null
+
+ALGORITHM 3: recursiveBinarySearch() - Line ~52
+├─ Type: Binary Search (recursive)
+├─ Complexity: O(log n)
+├─ Same as above but recursive
+├─ Demonstrates both iteration and recursion
+└─ Uses helper method
+
+FEATURES:
+- Comparison counter to track performance
+- Case-insensitive string comparison
+- Returns null if not found (graceful failure)
+
+DEMONSTRATION:
+→ Option 9: Search Products
+→ Try all 3 algorithms
+→ Compare performance (comparisons shown)
+→ Example: Search "Laptop"
+
+═══════════════════════════════════════════════════════════════
+✅ REQUIREMENT 5: A Sorting Algorithm
+═══════════════════════════════════════════════════════════════
+
+FILE: SortingAlgorithms.java
+Location: com/onlinestore/utils/
+
+ALGORITHM 1: bubbleSort() - Line ~18
+├─ Type: Bubble Sort
+├─ Complexity: O(n²)
+├─ Sorts by product name (alphabetical)
+├─ Includes optimization (early exit if no swaps)
+└─ Returns new sorted list
+
+ALGORITHM 2: selectionSort() - Line ~42
+├─ Type: Selection Sort
+├─ Complexity: O(n²)
+├─ Sorts by product price (ascending)
+├─ Finds minimum in each pass
+└─ Returns new sorted list
+
+ALGORITHM 3: insertionSort() - Line ~64
+├─ Type: Insertion Sort
+├─ Complexity: O(n²)
+├─ Sorts by product name (alphabetical)
+├─ Builds sorted portion gradually
+└─ Returns new sorted list
+
+FEATURES:
+- Comparison counter
+- Swap counter
+- All three classic algorithms implemented
+- Each sorts different attributes (name/price)
+
+DEMONSTRATION:
+→ Option 10: Sort Products
+→ Try all 3 algorithms
+→ See sorted output
+→ Compare comparisons/swaps counts
+
+═══════════════════════════════════════════════════════════════
+✅ REQUIREMENT 6: Input Validation and Robust Error Recovery
+═══════════════════════════════════════════════════════════════
+
+FILE: InputValidator.java
+Location: com/onlinestore/utils/
+
+METHOD 1: getIntInput() - Line ~17
+├─ Validates integer input
+├─ Checks range (min-max)
+├─ Handles NumberFormatException
+├─ Loops until valid
+└─ Prevents empty input
+
+METHOD 2: getDoubleInput() - Line ~45
+├─ Validates decimal input
+├─ Checks minimum value
+├─ Handles NumberFormatException
+├─ Loops until valid
+└─ Used for prices/amounts
+
+METHOD 3: getStringInput() - Line ~72
+├─ Validates non-empty strings
+├─ Trims whitespace
+├─ Loops until valid
+└─ Prevents empty input
+
+METHOD 4: getConfirmation() - Line ~88
+├─ Validates yes/no input
+├─ Accepts y/yes/n/no
+├─ Case-insensitive
+└─ Returns boolean
+
+METHOD 5: getEmailInput() - Line ~132
+├─ Validates email format
+├─ Uses regex pattern
+├─ Checks for @ and domain
+└─ Loops until valid email
+
+METHOD 6: isValidEmail() - Line ~109
+├─ Email regex validation
+└─ Returns boolean
+
+METHOD 7: isValidCreditCard() - Line ~118
+├─ Card number length check
+├─ 13-19 digits
+└─ Returns boolean
+
+ERROR RECOVERY:
+- All methods use while(true) loops
+- Try-catch blocks for exceptions
+- Clear error messages
+- User can retry indefinitely
+- No program crashes on invalid input
+
+DEMONSTRATION:
+→ Run program
+→ Try entering invalid values anywhere
+→ Example: Enter "abc" when number expected
+→ See validation messages and retry prompts
+
+═══════════════════════════════════════════════════════════════
+✅ REQUIREMENT 7: External Data Persistence (File Handling)
+═══════════════════════════════════════════════════════════════
+
+FILE: DataPersistence.java
+Location: com/onlinestore/utils/
+
+METHOD 1: saveProducts() - Line ~19
+├─ Saves product catalog to products.dat
+├─ Uses ObjectOutputStream
+├─ Serializes ArrayList<Product>
+└─ Returns success/failure boolean
+
+METHOD 2: loadProducts() - Line ~32
+├─ Loads products from products.dat
+├─ Uses ObjectInputStream
+├─ Deserializes to ArrayList<Product>
+├─ Returns empty list if file doesn't exist
+└─ Handles IOException and ClassNotFoundException
+
+METHOD 3: saveOrders() - Line ~50
+├─ Saves order history to orders.dat
+├─ Uses ObjectOutputStream
+├─ Serializes ArrayList<Order>
+└─ Returns success/failure boolean
+
+METHOD 4: loadOrders() - Line ~63
+├─ Loads orders from orders.dat
+├─ Uses ObjectInputStream
+├─ Deserializes to ArrayList<Order>
+├─ Returns empty list if file doesn't exist
+└─ Handles exceptions gracefully
+
+METHOD 5: saveUser() - Line ~81
+├─ Saves user data to users.dat
+├─ Uses ObjectOutputStream
+├─ Serializes User object
+└─ Returns success/failure boolean
+
+METHOD 6: loadUser() - Line ~94
+├─ Loads user from users.dat
+├─ Uses ObjectInputStream
+├─ Deserializes User object
+├─ Returns null if not exists
+└─ Handles exceptions
+
+METHOD 7: exportCartToText() - Line ~113
+├─ Exports cart to text file
+├─ Uses PrintWriter
+├─ Human-readable format
+├─ Includes date, items, total
+└─ Alternative persistence method
+
+METHOD 8: hasSavedData() - Line ~138
+├─ Checks if any saved files exist
+└─ Returns boolean
+
+FEATURES:
+- Binary serialization for efficiency
+- Text export for readability
+- Graceful error handling
+- File existence checks
+- Auto-creates files if needed
+
+DEMONSTRATION:
+→ Option 12: Save Data
+→ Exit program (option 15)
+→ Restart program
+→ Option 13: Load Data
+→ Verify all data restored
+→ Check for .dat files in directory
+
+═══════════════════════════════════════════════════════════════
+✅ REQUIREMENT 8: Multi-Option Console Menu
+═══════════════════════════════════════════════════════════════
+
+FILE: Main.java
+Location: com/onlinestore/ui/
+
+MAIN MENU STRUCTURE:
+
+displayMainMenu() - Line ~61
+├─ 15 menu options
+├─ Clear visual formatting
+├─ Icons for each option
+└─ Numbered 1-15
+
+handleMenuChoice() - Line ~80
+├─ Switch statement for all 15 options
+├─ Calls appropriate method for each
+├─ Returns boolean (continue/exit)
+└─ Exception handling wrapper
+
+MENU OPTIONS (15 Total):
+
+1.  Browse Products → browseProducts()
+2.  Add Product → addProductToCart()
+3.  View Cart → viewCart()
+4.  Remove Product → removeProductFromCart()
+5.  Apply Discount → applyDiscount()
+6.  Checkout → checkout()
+7.  View Order History → viewOrderHistory()
+8.  Leave Review → leaveProductReview()
+9.  Search Products → searchProductsDemo()
+10. Sort Products → sortProductsDemo()
+11. Recursive Demos → recursiveDemo()
+12. Save Data → saveAllData()
+13. Load Data → loadSavedData()
+14. User Info → manageUserInfo()
+15. Exit → return false
+
+FEATURES:
+- Input validation on all menu choices
+- Clear screen formatting with borders
+- Emoji icons for visual appeal
+- Comprehensive functionality
+- Error handling throughout
+- Loop-based continuous operation
+
+DEMONSTRATION:
+→ Simply run the program!
+→ Navigate through all 15 options
+→ Each option fully functional
+→ Clean, professional interface
+
+═══════════════════════════════════════════════════════════════
+📊 SUMMARY
+═══════════════════════════════════════════════════════════════
+
+REQUIREMENT                 FILES    METHODS    DEMO
+─────────────────────────────────────────────────────────
+1. Arrays/ArrayLists        5        10+        Options 1,3,7
+2. Custom Exceptions        3        3          Option 6
+3. Recursive Methods        1        8          Option 11
+4. Search Algorithms        1        3          Option 9
+5. Sort Algorithms          1        3          Option 10
+6. Input Validation         1        7          All inputs
+7. File Persistence         1        8          Options 12,13
+8. Multi-Option Menu        1        15         Main menu
+─────────────────────────────────────────────────────────
+TOTAL:                      19 Java files         ✅ ALL MET
+
+═══════════════════════════════════════════════════════════════
+✅ PROJECT STATUS: 100% COMPLETE - READY FOR SUBMISSION
+═══════════════════════════════════════════════════════════════
