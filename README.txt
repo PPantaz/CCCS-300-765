@@ -1,5 +1,5 @@
 ╔════════════════════════════════════════════════════════════════╗
-║       ONLINE STORE MANAGEMENT SYSTEM - COMPLETE PROJECT       ║
+║       ONLINE STORE MANAGEMENT SYSTEM - COMPLETE PROJECT        ║
 ║                   All 8 Requirements Met ✅                    ║
 ╚════════════════════════════════════════════════════════════════╝
 
@@ -252,7 +252,7 @@ ABSTRACTION:
    - Error handling throughout
    - Clean separation of concerns
 
-4. Show UML diagrams (if required)
+4. Show UML diagrams
 5. Discuss design decisions
 6. Run thorough testing scenarios
 
