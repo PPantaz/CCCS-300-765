@@ -6,7 +6,7 @@ echo.
 
 REM Check if compiled
 if not exist "com\onlinestore\ui" (
-    echo ❌ Project not compiled. Run compile.bat first!
+    echo Project not compiled. Run compile.bat first!
     pause
     exit /b 1
 )
