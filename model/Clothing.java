@@ -28,7 +28,7 @@ public class Clothing extends Product {
     @Override
     public void displayDetails() {
         System.out.println("═══════════════════════════════════════");
-        System.out.println("👕 CLOTHING PRODUCT");
+        System.out.println("CLOTHING PRODUCT");
         System.out.println("═══════════════════════════════════════");
         System.out.println("ID:       " + id);
         System.out.println("Name:     " + name);
@@ -36,7 +36,7 @@ public class Clothing extends Product {
         System.out.println("Material: " + material);
         System.out.println("Price:    $" + String.format("%.2f", price));
         System.out.println("Stock:    " + stock);
-        System.out.println("Rating:   " + String.format("%.1f", getAverageRating()) + "⭐");
+        System.out.println("Rating:   " + String.format("%.1f", getAverageRating()) + "");
         System.out.println("═══════════════════════════════════════");
     }
 
