@@ -28,7 +28,7 @@ public class ProductReview implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("[%s] %s - %d⭐: %s", 
+        return String.format("[%s] %s - %d: %s", 
                 reviewDate.toLocalDate(), userName, rating, comment);
     }
 }
