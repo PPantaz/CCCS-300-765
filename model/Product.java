@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Base Product class.
- * ✅ Requirement: Arrays/ArrayLists (has ArrayList<ProductReview>)
+ * Requirement: Arrays/ArrayLists (has ArrayList<ProductReview>)
  */
 public abstract class Product implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -16,7 +16,7 @@ public abstract class Product implements Serializable {
     protected double price;
     protected int stock;
     protected String category;
-    protected List<ProductReview> reviews; // ✅ ArrayList for reviews
+    protected List<ProductReview> reviews; // ArrayList for reviews
 
     public Product(String id, String name, double price, int stock, String category) {
         this.id = id;
@@ -24,7 +24,7 @@ public abstract class Product implements Serializable {
         this.price = price;
         this.stock = stock;
         this.category = category;
-        this.reviews = new ArrayList<>(); // ✅ ArrayList initialization
+        this.reviews = new ArrayList<>(); // ArrayList initialization
     }
 
     // Abstract method for discount calculation
@@ -67,7 +67,7 @@ public abstract class Product implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("%-15s %-25s $%-8.2f Stock: %-5d Rating: %.1f⭐",
+        return String.format("%-15s %-25s $%-8.2f Stock: %-5d Rating: %.1f",
                 id, name, price, stock, getAverageRating());
     }
 }
