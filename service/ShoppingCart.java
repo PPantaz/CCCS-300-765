@@ -7,44 +7,44 @@ import java.util.List;
 
 /**
  * Shopping cart service for managing products.
- * ✅ Requirement: Arrays/ArrayLists (has ArrayList<Product>)
+ * Requirement: Arrays/ArrayLists (has ArrayList<Product>)
  */
 public class ShoppingCart {
-    private List<Product> products; // ✅ ArrayList for products
+    private List<Product> products; //ArrayList for products
     private double discountPercent;
 
     public ShoppingCart() {
-        this.products = new ArrayList<>(); // ✅ ArrayList initialization
+        this.products = new ArrayList<>(); //ArrayList initialization
         this.discountPercent = 0.0;
     }
 
     public void addProduct(Product product) {
         products.add(product);
-        System.out.println("✅ Added: " + product.getName());
+        System.out.println("Added: " + product.getName());
     }
 
     public void removeProduct(int index) {
         if (index >= 0 && index < products.size()) {
             Product removed = products.remove(index);
-            System.out.println("🗑️ Removed: " + removed.getName());
+            System.out.println("Removed: " + removed.getName());
         } else {
-            System.out.println("❌ Invalid product index.");
+            System.out.println("Invalid product index.");
         }
     }
 
     public void clearCart() {
         products.clear();
         discountPercent = 0.0;
-        System.out.println("🗑️ Cart cleared.");
+        System.out.println("Cart cleared.");
     }
 
     public void applyDiscount(double percent) {
         if (percent < 0 || percent > 100) {
-            System.out.println("❌ Invalid discount percentage.");
+            System.out.println("Invalid discount percentage.");
             return;
         }
         this.discountPercent = percent;
-        System.out.printf("✅ Applied %.1f%% discount.%n", percent);
+        System.out.printf("Applied %.1f%% discount.%n", percent);
     }
 
     public double calculateSubtotal() {
@@ -62,13 +62,13 @@ public class ShoppingCart {
 
     /**
      * Checkout - throws custom exception if cart is empty.
-     * ✅ Exception handling
+     * Exception handling
      */
     public void checkout() throws EmptyCartException {
         if (isEmpty()) {
             throw new EmptyCartException();
         }
-        System.out.println("✅ Proceeding to checkout...");
+        System.out.println("Proceeding to checkout...");
     }
 
     public boolean isEmpty() {
@@ -85,12 +85,12 @@ public class ShoppingCart {
 
     public void displayCart() {
         if (isEmpty()) {
-            System.out.println("🛒 Your cart is empty.");
+            System.out.println("Your cart is empty.");
             return;
         }
 
         System.out.println("\n═══════════════════════════════════════");
-        System.out.println("🛒 SHOPPING CART");
+        System.out.println("SHOPPING CART");
         System.out.println("═══════════════════════════════════════");
         for (int i = 0; i < products.size(); i++) {
             Product product = products.get(i);
