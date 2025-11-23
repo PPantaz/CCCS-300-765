@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * Data persistence utility for saving/loading data to/from files.
- * ✅ Requirement: External data persistence (file handling)
+ * Requirement: External data persistence (file handling)
  */
 public class DataPersistence {
 
@@ -17,7 +17,7 @@ public class DataPersistence {
 
     /**
      * Save products to file.
-     * ✅ Requirement: File handling for saved data
+     * Requirement: File handling for saved data
      */
     public static boolean saveProducts(List<Product> products) {
         try (ObjectOutputStream oos = new ObjectOutputStream(
@@ -25,14 +25,14 @@ public class DataPersistence {
             oos.writeObject(products);
             return true;
         } catch (IOException e) {
-            System.err.println("❌ Error saving products: " + e.getMessage());
+            System.err.println("Error saving products: " + e.getMessage());
             return false;
         }
     }
 
     /**
      * Load products from file.
-     * ✅ Requirement: File handling for saved data
+     * Requirement: File handling for saved data
      */
     @SuppressWarnings("unchecked")
     public static List<Product> loadProducts() {
@@ -45,14 +45,14 @@ public class DataPersistence {
                 new FileInputStream(PRODUCTS_FILE))) {
             return (List<Product>) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            System.err.println("❌ Error loading products: " + e.getMessage());
+            System.err.println("Error loading products: " + e.getMessage());
             return new ArrayList<>();
         }
     }
 
     /**
      * Save orders to file.
-     * ✅ Requirement: File handling for saved data
+     * Requirement: File handling for saved data
      */
     public static boolean saveOrders(List<Order> orders) {
         try (ObjectOutputStream oos = new ObjectOutputStream(
@@ -60,14 +60,14 @@ public class DataPersistence {
             oos.writeObject(orders);
             return true;
         } catch (IOException e) {
-            System.err.println("❌ Error saving orders: " + e.getMessage());
+            System.err.println("Error saving orders: " + e.getMessage());
             return false;
         }
     }
 
     /**
      * Load orders from file.
-     * ✅ Requirement: File handling for saved data
+     * Requirement: File handling for saved data
      */
     @SuppressWarnings("unchecked")
     public static List<Order> loadOrders() {
@@ -80,14 +80,14 @@ public class DataPersistence {
                 new FileInputStream(ORDERS_FILE))) {
             return (List<Order>) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            System.err.println("❌ Error loading orders: " + e.getMessage());
+            System.err.println("Error loading orders: " + e.getMessage());
             return new ArrayList<>();
         }
     }
 
     /**
      * Save user data to file.
-     * ✅ Requirement: File handling for saved data
+     * Requirement: File handling for saved data
      */
     public static boolean saveUser(User user) {
         try (ObjectOutputStream oos = new ObjectOutputStream(
@@ -95,14 +95,14 @@ public class DataPersistence {
             oos.writeObject(user);
             return true;
         } catch (IOException e) {
-            System.err.println("❌ Error saving user: " + e.getMessage());
+            System.err.println("Error saving user: " + e.getMessage());
             return false;
         }
     }
 
     /**
      * Load user data from file.
-     * ✅ Requirement: File handling for saved data
+     * Requirement: File handling for saved data
      */
     public static User loadUser() {
         File file = new File(USERS_FILE);
@@ -114,14 +114,14 @@ public class DataPersistence {
                 new FileInputStream(USERS_FILE))) {
             return (User) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            System.err.println("❌ Error loading user: " + e.getMessage());
+            System.err.println("Error loading user: " + e.getMessage());
             return null;
         }
     }
 
     /**
      * Export cart to text file (alternative persistence method).
-     * ✅ Requirement: File handling for saved data
+     * Requirement: File handling for saved data
      */
     public static boolean exportCartToText(List<Product> products, String filename) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
@@ -139,14 +139,14 @@ public class DataPersistence {
             writer.printf("Total: $%.2f%n", total);
             return true;
         } catch (IOException e) {
-            System.err.println("❌ Error exporting cart: " + e.getMessage());
+            System.err.println("Error exporting cart: " + e.getMessage());
             return false;
         }
     }
 
     /**
      * Check if saved data exists.
-     * ✅ Requirement: File handling for saved data
+     * Requirement: File handling for saved data
      */
     public static boolean hasSavedData() {
         return new File(PRODUCTS_FILE).exists() || 
