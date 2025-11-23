@@ -4,7 +4,7 @@ import com.onlinestore.exceptions.InvalidPaymentException;
 
 /**
  * Credit Card payment implementation.
- * ✅ Exception handling with custom exception
+ * Exception handling with custom exception
  */
 public class CreditCardPayment extends Payment {
     private static final long serialVersionUID = 1L;
@@ -33,14 +33,14 @@ public class CreditCardPayment extends Payment {
         }
 
         // Simulate payment processing
-        System.out.println("💳 Processing Credit Card payment...");
+        System.out.println("Processing Credit Card payment...");
         try {
             Thread.sleep(1000); // Simulate processing delay
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
 
-        System.out.println("✅ Payment successful!");
+        System.out.println("Payment successful!");
         return true;
     }
 
