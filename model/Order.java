@@ -7,13 +7,13 @@ import java.util.List;
 
 /**
  * Order class to represent a customer order.
- * ✅ Requirement: Arrays/ArrayLists (has ArrayList<Product>)
+ * Requirement: Arrays/ArrayLists (has ArrayList<Product>)
  */
 public class Order implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private String orderId;
-    private List<Product> products; // ✅ ArrayList for products
+    private List<Product> products; // ArrayList for products
     private double totalAmount;
     private Payment payment;
     private LocalDateTime orderDate;
@@ -21,7 +21,7 @@ public class Order implements Serializable {
 
     public Order(String orderId, List<Product> products, double totalAmount, Payment payment) {
         this.orderId = orderId;
-        this.products = new ArrayList<>(products); // ✅ Create new ArrayList
+        this.products = new ArrayList<>(products); // Create new ArrayList
         this.totalAmount = totalAmount;
         this.payment = payment;
         this.orderDate = LocalDateTime.now();
@@ -44,7 +44,7 @@ public class Order implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("═══════════════════════════════════════\n");
-        sb.append("📦 ORDER DETAILS\n");
+        sb.append("ORDER DETAILS\n");
         sb.append("═══════════════════════════════════════\n");
         sb.append(String.format("Order ID:   %s\n", orderId));
         sb.append(String.format("Date:       %s\n", orderDate.toLocalDate()));
