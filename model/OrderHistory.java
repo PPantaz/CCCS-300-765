@@ -6,15 +6,15 @@ import java.util.List;
 
 /**
  * OrderHistory class to track customer orders.
- * ✅ Requirement: Arrays/ArrayLists (has ArrayList<Order>)
+ * Requirement: Arrays/ArrayLists (has ArrayList<Order>)
  */
 public class OrderHistory implements Serializable {
     private static final long serialVersionUID = 1L;
     
-    private List<Order> orders; // ✅ ArrayList for orders
+    private List<Order> orders; // ArrayList for orders
 
     public OrderHistory() {
-        this.orders = new ArrayList<>(); // ✅ ArrayList initialization
+        this.orders = new ArrayList<>(); // ArrayList initialization
     }
 
     public void addOrder(Order order) {
@@ -48,12 +48,12 @@ public class OrderHistory implements Serializable {
 
     public void displayOrderHistory() {
         if (orders.isEmpty()) {
-            System.out.println("📦 No orders yet.");
+            System.out.println("No orders yet.");
             return;
         }
 
         System.out.println("\n═══════════════════════════════════════");
-        System.out.println("📦 ORDER HISTORY");
+        System.out.println("ORDER HISTORY");
         System.out.println("═══════════════════════════════════════");
         for (int i = 0; i < orders.size(); i++) {
             Order order = orders.get(i);
