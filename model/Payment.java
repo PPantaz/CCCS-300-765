@@ -20,7 +20,7 @@ public abstract class Payment implements Serializable {
 
     /**
      * Process payment - must be implemented by subclasses.
-     * ✅ Exception handling with custom exception
+     * Exception handling with custom exception
      */
     public abstract boolean processPayment() throws InvalidPaymentException;
 
