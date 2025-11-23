@@ -4,7 +4,7 @@ import com.onlinestore.exceptions.InvalidPaymentException;
 
 /**
  * PayPal payment implementation.
- * ✅ Exception handling with custom exception
+ * Exception handling with custom exception
  */
 public class PayPalPayment extends Payment {
     private static final long serialVersionUID = 1L;
@@ -28,14 +28,14 @@ public class PayPalPayment extends Payment {
         }
 
         // Simulate payment processing
-        System.out.println("🅿️ Processing PayPal payment...");
+        System.out.println("Processing PayPal payment...");
         try {
             Thread.sleep(1000); // Simulate processing delay
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
 
-        System.out.println("✅ Payment successful!");
+        System.out.println("Payment successful!");
         return true;
     }
 
