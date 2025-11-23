@@ -30,7 +30,7 @@ public class Grocery extends Product {
     @Override
     public void displayDetails() {
         System.out.println("═══════════════════════════════════════");
-        System.out.println("🛒 GROCERY PRODUCT");
+        System.out.println("GROCERY PRODUCT");
         System.out.println("═══════════════════════════════════════");
         System.out.println("ID:       " + id);
         System.out.println("Name:     " + name);
@@ -38,7 +38,7 @@ public class Grocery extends Product {
         System.out.println("Stock:    " + stock);
         System.out.println("Expiry:   " + expiryDate);
         System.out.println("Organic:  " + (isOrganic ? "Yes" : "No"));
-        System.out.println("Rating:   " + String.format("%.1f", getAverageRating()) + "⭐");
+        System.out.println("Rating:   " + String.format("%.1f", getAverageRating()) + "");
         System.out.println("═══════════════════════════════════════");
     }
 
