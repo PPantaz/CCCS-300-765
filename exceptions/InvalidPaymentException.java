@@ -2,7 +2,7 @@ package com.onlinestore.exceptions;
 
 /**
  * Custom exception for invalid payment scenarios.
- * ✅ Requirement: Custom exception class
+ * Requirement: Custom exception class
  */
 public class InvalidPaymentException extends Exception {
     private String paymentType;
