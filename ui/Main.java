@@ -10,17 +10,17 @@ import java.util.*;
 
 /**
  * Main Online Store Management System.
- * ✅ All 8 requirements implemented
+ * All 8 requirements implemented
  * 
  * Requirements Checklist:
- * 1. ✅ Arrays/ArrayLists - Product reviews, ShoppingCart, OrderHistory, Order
- * 2. ✅ Custom exceptions - InvalidPaymentException, EmptyCartException, ProductNotFoundException
- * 3. ✅ Recursive methods - RecursiveUtils (7 methods)
- * 4. ✅ Search algorithm - SearchAlgorithms (linear, binary, recursive)
- * 5. ✅ Sort algorithm - SortingAlgorithms (bubble, selection, insertion)
- * 6. ✅ Input validation - InputValidator with robust error recovery
- * 7. ✅ File persistence - DataPersistence (save/load to files)
- * 8. ✅ Multi-option menu - This class with 15 menu options
+ * 1. Arrays/ArrayLists - Product reviews, ShoppingCart, OrderHistory, Order
+ * 2. Custom exceptions - InvalidPaymentException, EmptyCartException, ProductNotFoundException
+ * 3. Recursive methods - RecursiveUtils (7 methods)
+ * 4. Search algorithm - SearchAlgorithms (linear, binary, recursive)
+ * 5. Sort algorithm - SortingAlgorithms (bubble, selection, insertion)
+ * 6. Input validation - InputValidator with robust error recovery
+ * 7. File persistence - DataPersistence (save/load to files)
+ * 8. Multi-option menu - This class with 15 menu options
  */
 public class Main {
     
@@ -33,7 +33,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("╔════════════════════════════════════════╗");
         System.out.println("║   ONLINE STORE MANAGEMENT SYSTEM       ║");
-        System.out.println("║   All Requirements Implemented ✅       ║");
+        System.out.println("║   All Requirements Implemented         ║");
         System.out.println("╚════════════════════════════════════════╝");
         
         initializeStore();
@@ -45,39 +45,39 @@ public class Main {
         boolean running = true;
         while (running) {
             displayMainMenu();
-            int choice = InputValidator.getIntInput(scanner, "\n👉 Enter your choice: ", 1, 15);
+            int choice = InputValidator.getIntInput(scanner, "\n Enter your choice: ", 1, 15);
             
             try {
                 running = handleMenuChoice(choice);
             } catch (Exception e) {
-                System.err.println("❌ Error: " + e.getMessage());
+                System.err.println("Error: " + e.getMessage());
                 e.printStackTrace();
             }
         }
         
         scanner.close();
-        System.out.println("\n👋 Thank you for shopping with us!");
+        System.out.println("\n Thank you for shopping with us!");
     }
 
     private static void displayMainMenu() {
         System.out.println("\n╔════════════════════════════════════════╗");
         System.out.println("║            MAIN MENU                   ║");
         System.out.println("╚════════════════════════════════════════╝");
-        System.out.println("1.  📋 Browse Products");
-        System.out.println("2.  ➕ Add Product to Cart");
-        System.out.println("3.  🛒 View Shopping Cart");
-        System.out.println("4.  🗑️  Remove Product from Cart");
-        System.out.println("5.  💰 Apply Discount");
-        System.out.println("6.  💳 Checkout");
-        System.out.println("7.  📦 View Order History");
-        System.out.println("8.  ⭐ Leave Product Review");
-        System.out.println("9.  🔍 Search Products (Algorithms)");
-        System.out.println("10. 📊 Sort Products (Algorithms)");
-        System.out.println("11. 🔢 Recursive Demos");
-        System.out.println("12. 💾 Save All Data");
-        System.out.println("13. 📂 Load Saved Data");
-        System.out.println("14. 👤 View/Edit User Info");
-        System.out.println("15. 🚪 Exit");
+        System.out.println("1.  Browse Products");
+        System.out.println("2.  Add Product to Cart");
+        System.out.println("3.  View Shopping Cart");
+        System.out.println("4.  Remove Product from Cart");
+        System.out.println("5.  Apply Discount");
+        System.out.println("6.  Checkout");
+        System.out.println("7.  View Order History");
+        System.out.println("8.  Leave Product Review");
+        System.out.println("9.  Search Products (Algorithms)");
+        System.out.println("10. Sort Products (Algorithms)");
+        System.out.println("11. Recursive Demos");
+        System.out.println("12. Save All Data");
+        System.out.println("13. Load Saved Data");
+        System.out.println("14. View/Edit User Info");
+        System.out.println("15. Exit");
     }
 
     private static boolean handleMenuChoice(int choice) throws EmptyCartException, InvalidPaymentException {
@@ -133,11 +133,11 @@ public class Main {
     private static void initializeStore() {
         // Initialize user
         if (currentUser == null) {
-            System.out.println("\n🎯 Welcome! Let's create your account.");
+            System.out.println("\n Welcome! Let's create your account.");
             String username = InputValidator.getStringInput(scanner, "Enter username: ");
             String email = InputValidator.getEmailInput(scanner, "Enter email: ");
             currentUser = new User(username, email);
-            System.out.println("✅ Account created for " + username + "!");
+            System.out.println("Account created for " + username + "!");
         }
 
         // Initialize product catalog
@@ -159,12 +159,12 @@ public class Main {
         catalog.add(new Grocery("G004", "Organic Eggs", 5.99, 60, LocalDate.now().plusDays(10), true));
         catalog.add(new Grocery("G005", "Orange Juice", 3.99, 45, LocalDate.now().plusDays(7), false));
 
-        System.out.println("✅ Store initialized with " + catalog.size() + " products.");
+        System.out.println("Store initialized with " + catalog.size() + " products.");
     }
 
     private static void browseProducts() {
         System.out.println("\n═══════════════════════════════════════");
-        System.out.println("📋 PRODUCT CATALOG");
+        System.out.println("PRODUCT CATALOG");
         System.out.println("═══════════════════════════════════════");
         for (int i = 0; i < catalog.size(); i++) {
             System.out.printf("%2d. %s%n", i + 1, catalog.get(i));
@@ -174,7 +174,7 @@ public class Main {
 
     private static void addProductToCart() {
         if (catalog.isEmpty()) {
-            System.out.println("❌ No products available.");
+            System.out.println("No products available.");
             return;
         }
 
@@ -190,7 +190,7 @@ public class Main {
 
     private static void removeProductFromCart() {
         if (cart.isEmpty()) {
-            System.out.println("🛒 Your cart is empty.");
+            System.out.println("Your cart is empty.");
             return;
         }
 
@@ -201,13 +201,13 @@ public class Main {
 
     private static void applyDiscount() {
         if (cart.isEmpty()) {
-            System.out.println("🛒 Your cart is empty.");
+            System.out.println("Your cart is empty.");
             return;
         }
 
         double discount = InputValidator.getDoubleInput(scanner, "Enter discount percentage (0-100): ", 0.0);
         if (discount > 100) {
-            System.out.println("❌ Discount cannot exceed 100%.");
+            System.out.println("Discount cannot exceed 100%.");
             return;
         }
         cart.applyDiscount(discount);
@@ -215,14 +215,14 @@ public class Main {
 
     /**
      * Checkout - demonstrates exception handling.
-     * ✅ Requirement: Exception handling
+     * Requirement: Exception handling
      */
     private static void checkout() throws EmptyCartException, InvalidPaymentException {
         // Check if cart is empty - throws EmptyCartException
         cart.checkout();
 
         System.out.println("\n═══════════════════════════════════════");
-        System.out.println("💳 CHECKOUT");
+        System.out.println("CHECKOUT");
         System.out.println("═══════════════════════════════════════");
         cart.displayCart();
 
@@ -262,7 +262,7 @@ public class Main {
 
     private static void leaveProductReview() {
         if (catalog.isEmpty()) {
-            System.out.println("❌ No products available.");
+            System.out.println("No products available.");
             return;
         }
 
@@ -276,18 +276,18 @@ public class Main {
         ProductReview review = new ProductReview(currentUser.getUsername(), rating, comment);
         product.addReview(review);
 
-        System.out.println("✅ Review added successfully!");
-        System.out.printf("New average rating for %s: %.1f⭐%n", 
+        System.out.println("Review added successfully!");
+        System.out.printf("New average rating for %s: %.1f%n", 
                 product.getName(), product.getAverageRating());
     }
 
     /**
      * Search algorithms demonstration.
-     * ✅ Requirement: Searching algorithm
+     * Requirement: Searching algorithm
      */
     private static void searchProductsDemo() {
         System.out.println("\n═══════════════════════════════════════");
-        System.out.println("🔍 SEARCH ALGORITHMS");
+        System.out.println("SEARCH ALGORITHMS");
         System.out.println("═══════════════════════════════════════");
         System.out.println("1. Linear Search");
         System.out.println("2. Binary Search (requires sorted list)");
@@ -317,23 +317,23 @@ public class Main {
         double duration = (endTime - startTime) / 1_000_000.0;
 
         if (result != null) {
-            System.out.println("\n✅ Product found!");
+            System.out.println("\n Product found!");
             result.displayDetails();
         } else {
-            System.out.println("\n❌ Product not found.");
+            System.out.println("\n Product not found.");
         }
 
-        System.out.printf("\n📊 Comparisons: %d | Time: %.3f ms%n", 
+        System.out.printf("\n Comparisons: %d | Time: %.3f ms%n", 
                 SearchAlgorithms.getComparisonCount(), duration);
     }
 
     /**
      * Sorting algorithms demonstration.
-     * ✅ Requirement: Sorting algorithm
+     * Requirement: Sorting algorithm
      */
     private static void sortProductsDemo() {
         System.out.println("\n═══════════════════════════════════════");
-        System.out.println("📊 SORTING ALGORITHMS");
+        System.out.println("SORTING ALGORITHMS");
         System.out.println("═══════════════════════════════════════");
         System.out.println("1. Bubble Sort (by name)");
         System.out.println("2. Selection Sort (by price)");
@@ -347,15 +347,15 @@ public class Main {
         switch (choice) {
             case 1:
                 sorted = SortingAlgorithms.bubbleSort(catalog);
-                System.out.println("\n✅ Sorted by name (Bubble Sort):");
+                System.out.println("\n Sorted by name (Bubble Sort):");
                 break;
             case 2:
                 sorted = SortingAlgorithms.selectionSort(catalog);
-                System.out.println("\n✅ Sorted by price (Selection Sort):");
+                System.out.println("\n Sorted by price (Selection Sort):");
                 break;
             case 3:
                 sorted = SortingAlgorithms.insertionSort(catalog);
-                System.out.println("\n✅ Sorted by name (Insertion Sort):");
+                System.out.println("\n Sorted by name (Insertion Sort):");
                 break;
             default:
                 return;
@@ -368,7 +368,7 @@ public class Main {
             System.out.printf("%2d. %s%n", i + 1, sorted.get(i));
         }
 
-        System.out.printf("\n📊 Comparisons: %d | Swaps: %d | Time: %.3f ms%n", 
+        System.out.printf("\n Comparisons: %d | Swaps: %d | Time: %.3f ms%n", 
                 SortingAlgorithms.getComparisonCount(), 
                 SortingAlgorithms.getSwapCount(), 
                 duration);
@@ -376,11 +376,11 @@ public class Main {
 
     /**
      * Recursive methods demonstration.
-     * ✅ Requirement: Recursive method
+     * Requirement: Recursive method
      */
     private static void recursiveDemo() {
         System.out.println("\n═══════════════════════════════════════");
-        System.out.println("🔢 RECURSIVE METHODS");
+        System.out.println("RECURSIVE METHODS");
         System.out.println("═══════════════════════════════════════");
         System.out.println("1. Factorial");
         System.out.println("2. Cart Total (Recursive)");
@@ -396,93 +396,93 @@ public class Main {
             case 1:
                 int n = InputValidator.getIntInput(scanner, "Enter number for factorial: ", 0, 20);
                 long fact = RecursiveUtils.factorial(n);
-                System.out.printf("✅ Factorial of %d = %d%n", n, fact);
+                System.out.printf("Factorial of %d = %d%n", n, fact);
                 break;
 
             case 2:
                 if (cart.isEmpty()) {
-                    System.out.println("❌ Cart is empty.");
+                    System.out.println("Cart is empty.");
                 } else {
                     double total = RecursiveUtils.calculateTotalRecursive(cart.getProducts(), 0);
-                    System.out.printf("✅ Cart total (recursive): $%.2f%n", total);
+                    System.out.printf("Cart total (recursive): $%.2f%n", total);
                 }
                 break;
 
             case 3:
                 int count = RecursiveUtils.countProductsRecursive(catalog, 0);
-                System.out.printf("✅ Product count (recursive): %d%n", count);
+                System.out.printf("Product count (recursive): %d%n", count);
                 break;
 
             case 4:
                 if (catalog.isEmpty()) {
-                    System.out.println("❌ No products in catalog.");
+                    System.out.println("No products in catalog.");
                 } else {
                     double maxPrice = RecursiveUtils.findMaxPriceRecursive(catalog, 0, 0.0);
-                    System.out.printf("✅ Maximum price (recursive): $%.2f%n", maxPrice);
+                    System.out.printf("Maximum price (recursive): $%.2f%n", maxPrice);
                 }
                 break;
 
             case 5:
                 int fibN = InputValidator.getIntInput(scanner, "Enter position for Fibonacci: ", 0, 40);
                 int fib = RecursiveUtils.fibonacci(fibN);
-                System.out.printf("✅ Fibonacci(%d) = %d%n", fibN, fib);
+                System.out.printf("Fibonacci(%d) = %d%n", fibN, fib);
                 break;
 
             case 6:
                 int sumN = InputValidator.getIntInput(scanner, "Enter N for sum 1 to N: ", 1, 1000);
                 int sum = RecursiveUtils.sumToN(sumN);
-                System.out.printf("✅ Sum from 1 to %d = %d%n", sumN, sum);
+                System.out.printf("Sum from 1 to %d = %d%n", sumN, sum);
                 break;
 
             case 7:
                 double base = InputValidator.getDoubleInput(scanner, "Enter base: ", 0.0);
                 int exp = InputValidator.getIntInput(scanner, "Enter exponent: ", -10, 10);
                 double result = RecursiveUtils.power(base, exp);
-                System.out.printf("✅ %.2f ^ %d = %.6f%n", base, exp, result);
+                System.out.printf(" %.2f ^ %d = %.6f%n", base, exp, result);
                 break;
         }
     }
 
     /**
      * Save all data to files.
-     * ✅ Requirement: File persistence
+     * Requirement: File persistence
      */
     private static void saveAllData() {
-        System.out.println("\n💾 Saving data...");
+        System.out.println("\n Saving data...");
         
         boolean productsOk = DataPersistence.saveProducts(catalog);
         boolean ordersOk = DataPersistence.saveOrders(orderHistory.getOrders());
         boolean userOk = DataPersistence.saveUser(currentUser);
 
         if (productsOk && ordersOk && userOk) {
-            System.out.println("✅ All data saved successfully!");
+            System.out.println("All data saved successfully!");
         } else {
-            System.out.println("⚠️ Some data could not be saved.");
+            System.out.println("Some data could not be saved.");
         }
     }
 
     /**
      * Load saved data from files.
-     * ✅ Requirement: File persistence
+     * Requirement: File persistence
      */
     private static void loadSavedData() {
         if (!DataPersistence.hasSavedData()) {
-            System.out.println("ℹ️ No saved data found.");
+            System.out.println("No saved data found.");
             return;
         }
 
-        System.out.println("\n📂 Loading saved data...");
+        System.out.println("\n Loading saved data...");
 
         User loadedUser = DataPersistence.loadUser();
         if (loadedUser != null) {
             currentUser = loadedUser;
-            System.out.println("✅ User loaded: " + currentUser.getUsername());
+            System.out.println("User loaded: " + currentUser.getUsername());
         }
 
         List<Product> loadedProducts = DataPersistence.loadProducts();
         if (!loadedProducts.isEmpty()) {
             catalog = loadedProducts;
-            System.out.println("✅ Loaded " + catalog.size() + " products.");
+            System.out.println("Loaded " + catalog.size() + " products.");
         }
 
         List<Order> loadedOrders = DataPersistence.loadOrders();
@@ -491,20 +491,20 @@ public class Main {
             for (Order order : loadedOrders) {
                 orderHistory.addOrder(order);
             }
-            System.out.println("✅ Loaded " + loadedOrders.size() + " orders.");
+            System.out.println("Loaded " + loadedOrders.size() + " orders.");
         }
 
-        System.out.println("✅ All data loaded successfully!");
+        System.out.println("All data loaded successfully!");
     }
 
     private static void manageUserInfo() {
         if (currentUser == null) {
-            System.out.println("❌ No user logged in.");
+            System.out.println("No user logged in.");
             return;
         }
 
         System.out.println("\n═══════════════════════════════════════");
-        System.out.println("👤 USER INFORMATION");
+        System.out.println("USER INFORMATION");
         System.out.println("═══════════════════════════════════════");
         System.out.println("Username: " + currentUser.getUsername());
         System.out.println("Email:    " + currentUser.getEmail());
@@ -515,7 +515,7 @@ public class Main {
         if (update) {
             String address = InputValidator.getStringInput(scanner, "Enter new address: ");
             currentUser.setAddress(address);
-            System.out.println("✅ Address updated!");
+            System.out.println("Address updated!");
         }
     }
 }
