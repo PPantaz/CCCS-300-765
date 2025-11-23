@@ -6,8 +6,8 @@ import java.util.List;
 
 /**
  * Search algorithms for products.
- * ✅ Requirement: Searching algorithm (linear/binary search)
- * ✅ Requirement: Recursive method
+ * Requirement: Searching algorithm (linear/binary search)
+ * Requirement: Recursive method
  */
 public class SearchAlgorithms {
     
@@ -15,7 +15,7 @@ public class SearchAlgorithms {
 
     /**
      * Linear search for a product by name (case-insensitive).
-     * ✅ Requirement: Searching algorithm
+     * Requirement: Searching algorithm
      */
     public static Product linearSearch(List<Product> products, String name) {
         comparisonCount = 0;
@@ -30,7 +30,7 @@ public class SearchAlgorithms {
 
     /**
      * Binary search for a product by name (requires sorted list).
-     * ✅ Requirement: Searching algorithm
+     * Requirement: Searching algorithm
      */
     public static Product binarySearch(List<Product> products, String name) {
         comparisonCount = 0;
@@ -55,7 +55,7 @@ public class SearchAlgorithms {
 
     /**
      * Recursive binary search implementation.
-     * ✅ Requirement: Recursive method
+     * Requirement: Recursive method
      */
     public static Product recursiveBinarySearch(List<Product> products, String name) {
         comparisonCount = 0;
