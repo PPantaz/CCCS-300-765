@@ -5,13 +5,13 @@ import java.util.List;
 
 /**
  * Utility class with recursive methods for various calculations.
- * ✅ Requirement: Recursive method
+ * Requirement: Recursive method
  */
 public class RecursiveUtils {
 
     /**
      * Calculate factorial recursively.
-     * ✅ Requirement: Recursive method
+     * Requirement: Recursive method
      */
     public static long factorial(int n) {
         if (n <= 1) {
@@ -22,7 +22,7 @@ public class RecursiveUtils {
 
     /**
      * Calculate total cart value recursively.
-     * ✅ Requirement: Recursive method
+     * Requirement: Recursive method
      */
     public static double calculateTotalRecursive(List<Product> products, int index) {
         if (index >= products.size()) {
@@ -33,7 +33,7 @@ public class RecursiveUtils {
 
     /**
      * Count products recursively.
-     * ✅ Requirement: Recursive method
+     * Requirement: Recursive method
      */
     public static int countProductsRecursive(List<Product> products, int index) {
         if (index >= products.size()) {
@@ -44,7 +44,7 @@ public class RecursiveUtils {
 
     /**
      * Find max price recursively.
-     * ✅ Requirement: Recursive method
+     * Requirement: Recursive method
      */
     public static double findMaxPriceRecursive(List<Product> products, int index, double maxSoFar) {
         if (index >= products.size()) {
@@ -57,7 +57,7 @@ public class RecursiveUtils {
 
     /**
      * Sum of integers from 1 to n (recursive).
-     * ✅ Requirement: Recursive method
+     * Requirement: Recursive method
      */
     public static int sumToN(int n) {
         if (n <= 0) {
@@ -68,7 +68,7 @@ public class RecursiveUtils {
 
     /**
      * Fibonacci sequence (recursive).
-     * ✅ Requirement: Recursive method
+     * Requirement: Recursive method
      */
     public static int fibonacci(int n) {
         if (n <= 1) {
@@ -79,7 +79,7 @@ public class RecursiveUtils {
 
     /**
      * Power calculation (recursive).
-     * ✅ Requirement: Recursive method
+     * Requirement: Recursive method
      */
     public static double power(double base, int exponent) {
         if (exponent == 0) {
