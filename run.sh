@@ -7,7 +7,7 @@ echo ""
 
 # Check if compiled
 if [ ! -d "com/onlinestore/ui" ]; then
-    echo "❌ Project not compiled. Run ./compile.sh first!"
+    echo "Project not compiled. Run ./compile.sh first!"
     exit 1
 fi
 
