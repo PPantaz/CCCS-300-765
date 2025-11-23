@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Sorting algorithms for products.
- * ✅ Requirement: Sorting algorithm (bubble/insertion/selection sort)
+ * Requirement: Sorting algorithm (bubble/insertion/selection sort)
  */
 public class SortingAlgorithms {
     
@@ -15,7 +15,7 @@ public class SortingAlgorithms {
 
     /**
      * Bubble sort - sorts products by name (ascending).
-     * ✅ Requirement: Sorting algorithm
+     * Requirement: Sorting algorithm
      */
     public static List<Product> bubbleSort(List<Product> products) {
         List<Product> sorted = new ArrayList<>(products);
@@ -43,7 +43,7 @@ public class SortingAlgorithms {
 
     /**
      * Selection sort - sorts products by price (ascending).
-     * ✅ Requirement: Sorting algorithm
+     * Requirement: Sorting algorithm
      */
     public static List<Product> selectionSort(List<Product> products) {
         List<Product> sorted = new ArrayList<>(products);
@@ -71,7 +71,7 @@ public class SortingAlgorithms {
 
     /**
      * Insertion sort - sorts products by name (ascending).
-     * ✅ Requirement: Sorting algorithm
+     * Requirement: Sorting algorithm
      */
     public static List<Product> insertionSort(List<Product> products) {
         List<Product> sorted = new ArrayList<>(products);
