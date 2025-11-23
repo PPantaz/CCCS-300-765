@@ -2,7 +2,7 @@ package com.onlinestore.exceptions;
 
 /**
  * Custom exception thrown when a product cannot be found.
- * ✅ Requirement: Custom exception class
+ * Requirement: Custom exception class
  */
 public class ProductNotFoundException extends Exception {
     private String productId;
