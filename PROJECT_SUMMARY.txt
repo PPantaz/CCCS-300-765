@@ -1,6 +1,6 @@
 ╔════════════════════════════════════════════════════════════════╗
 ║                    PROJECT SUMMARY                             ║
-║          Online Store Management System                         ║
+║          Online Store Management System                        ║
 ║       CCCS 300 765 - Programming Techniques I                  ║
 ╚════════════════════════════════════════════════════════════════╝
 
@@ -19,7 +19,7 @@ Lines of Code:           ~2,500 lines
 Packages:                5 (exceptions, model, service, utils, ui)
 Classes:                 19 Java classes
 Features:                15 menu options
-Requirements Met:        8 out of 8 (100%) ✅
+Requirements Met:        8 out of 8 (100%)
 
 🏗️ ARCHITECTURE
 ═══════════════════════════════════════════════════════════════
@@ -296,8 +296,6 @@ The project goes beyond minimum requirements by providing:
 - Professional user experience
 - Production-quality code structure
 - Extensive documentation
-
-Perfect for demonstrating Java programming proficiency! ✅
 
 ═══════════════════════════════════════════════════════════════
 
