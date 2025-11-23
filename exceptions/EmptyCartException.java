@@ -2,7 +2,7 @@ package com.onlinestore.exceptions;
 
 /**
  * Custom exception thrown when attempting to checkout with an empty cart.
- * ✅ Requirement: Custom exception class
+ * Requirement: Custom exception class
  */
 public class EmptyCartException extends Exception {
     
